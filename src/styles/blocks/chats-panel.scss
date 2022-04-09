@@ -1,0 +1,107 @@
+.chats-panel {
+  z-index: 5;
+  width: 400px;
+  height: 100vh;
+  background-color: $c-dark-blue;
+  border-right: 3px solid $c-dark-yellow;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 0.1s ease;
+
+  @include onMobile() {
+    position: absolute;
+    width: 100vw;
+    transform: translateX(-100%);
+  }
+
+  &--active {
+    @include onMobile() {
+      position: absolute;
+      width: 100vw;
+      transform: translateX(0);
+    } 
+  }
+
+  &__self-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    top:100%;
+    transform: translateY(-100%);
+    width: 100%;
+    height: 80px;
+    background-color: $c-blue;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  &__self-avatar {
+    display: flex;
+    width: 60px;
+    height: 60px
+  }
+
+  &__self-name {
+    margin-left: 10px;
+    width: 200px;
+    overflow: hidden;
+    color: $c-yellow;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  &__settings-button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    right: 15px;
+  }
+
+  &__settings-close {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &__settings {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    // opacity: 0;
+    transform: translateX(-100%);
+    width: 500px;
+    height: 100%;
+    background: $c-dark-blue;
+    transition: all 0.2s ease;
+    top: 0;
+    left: 0;
+    border: 3px solid $c-dark-yellow;
+    box-sizing: border-box;
+
+    @include onMobile() {
+      width: 100vw
+    }
+
+    &--active {
+      transform: translateY(0);
+      // opacity: 1;
+    }
+  }
+
+  &__settings-avatar {
+    display: flex;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px
+  }
+}
