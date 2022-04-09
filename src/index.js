@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { HashRouter as Router, Route } from 'react-router-dom'
+
+document.touchmove = function(e)
+{ 
+    e.preventDefault(); 
+};
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Router>
     <App />
-  </React.StrictMode>,
+  </Router>,
   document.getElementById('root')
 );
 
